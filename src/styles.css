@@ -4,19 +4,14 @@ body {
   background-color: #f5f5f5;
 }
 
-/* Clases de Accesibilidad */
-
-/* Texto: Aumentar tamaño */
 body.large-text {
   font-size: 120%;
 }
 
-/* Texto: Aumentar altura de líneas */
 body.large-line-height * {
   line-height: 2 !important;
 }
 
-/* Visual: Alto contraste */
 body.high-contrast {
   background: #000 !important;
   color: #fff !important;
@@ -44,12 +39,10 @@ body.high-contrast button.active {
   color: #000 !important;
 }
 
-/* Visual: Escala de grises */
 body.grayscale {
   filter: grayscale(100%);
 }
 
-/* Orientación: Resaltar enlaces */
 body.highlight-links a,
 body.highlight-links button,
 body.highlight-links select {
@@ -57,7 +50,6 @@ body.highlight-links select {
   outline-offset: 2px;
 }
 
-/* Orientación: Mostrar estructura */
 body.show-structure h1::before { content: "H1: "; font-weight: bold; color: red; }
 body.show-structure h2::before { content: "H2: "; font-weight: bold; color: orange; }
 body.show-structure h3::before { content: "H3: "; font-weight: bold; color: blue; }

@@ -55,7 +55,6 @@ select {
   margin: 5px 0;
 }
 
-/* Widget de Accesibilidad */
 .accessibility-toggle {
   position: fixed;
   bottom: 20px;
