@@ -1,0 +1,72 @@
+<div>
+  <h2>Gestión de Platos</h2>
+
+  <div>
+    <h3>{{ editingDish ? 'Editar Plato' : 'Crear Nuevo Plato' }}</h3>
+    <form (submit)="onSubmit()">
+      <div>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" [(ngModel)]="formDish.name" name="name" />
+      </div>
+
+      <div>
+        <label for="price">Precio:</label>
+        <input type="number" id="price" [(ngModel)]="formDish.price" name="price" step="0.01" />
+      </div>
+
+      <div>
+        <label for="description">Descripción:</label>
+        <textarea id="description" [(ngModel)]="formDish.description" name="description" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="category">Categoría:</label>
+        <select id="category" [(ngModel)]="formDish.category" name="category">
+          <option value="entrantes">Entrantes</option>
+          <option value="platos principales">Platos Principales</option>
+          <option value="postres">Postres</option>
+          <option value="bebidas">Bebidas</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="image">URL Imagen:</label>
+        <input type="text" id="image" [(ngModel)]="formDish.image" name="image" />
+      </div>
+
+      <div>
+        <input type="checkbox" id="enabled" [(ngModel)]="formDish.enabled" name="enabled" />
+        <label for="enabled">Habilitado</label>
+      </div>
+
+      <div>
+        <button type="submit">{{ editingDish ? 'Actualizar' : 'Crear' }}</button>
+        @if (editingDish) {
+          <button type="button" (click)="resetForm()">Cancelar</button>
+        }
+      </div>
+    </form>
+  </div>
+
+  @if (dishes$ | async; as dishes) {
+    <div class="dishes">
+      @for (dish of dishes; track dish.id) {
+        <div class="dish" [ngClass]="{ 'disabled': !dish.enabled }">
+          <img [src]="dish.image" [alt]="dish.name" />
+          <h3>{{ dish.name }}</h3>
+          <p>{{ dish.description }}</p>
+          <p><strong>{{ dish.price | currency: 'EUR' : 'symbol' }}</strong></p>
+          <p>{{ dish.category }}</p>
+          @if (!dish.enabled) {
+            <p style="color: red;">Deshabilitado</p>
+          }
+          <div>
+            <button (click)="editDish(dish)">Editar</button>
+            <button (click)="toggleEnabled(dish)">{{ dish.enabled ? 'Deshabilitar' : 'Habilitar' }}</button>
+            <button (click)="deleteDish(dish.id)">Eliminar</button>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>

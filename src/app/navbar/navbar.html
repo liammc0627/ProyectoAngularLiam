@@ -1,0 +1,12 @@
+<nav>
+  <a routerLink="/home">Restaurante</a>
+  <a routerLink="/menu">Carta</a>
+  @if (authService.isChef()) {
+    <a routerLink="/admin">Gestión</a>
+  }
+  @if (!authService.isLoggedIn()) {
+    <a routerLink="/login">Iniciar sesión</a>
+  } @else {
+    <button (click)="logout()">Cerrar sesión</button>
+  }
+</nav>
