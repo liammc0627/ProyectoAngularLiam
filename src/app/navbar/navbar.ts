@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { DiseñoLiamAuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,9 +9,9 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar {
+export class DiseñoLiamNavbar {
   constructor(
-    protected authService: AuthService,
+    protected authService: DiseñoLiamAuthService,
     private router: Router
   ) {}
 

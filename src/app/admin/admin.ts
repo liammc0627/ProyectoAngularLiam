@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DishService } from '../services/dish.service';
+import { DiseñoLiamDishService } from '../services/dish.service';
 import { IDish } from '../interfaces/i-dish';
 import { Observable } from 'rxjs';
 import { FormsModule } from '@angular/forms';
@@ -11,13 +11,13 @@ import { CurrencyPipe, AsyncPipe, NgClass } from '@angular/common';
   templateUrl: './admin.html',
   styleUrl: './admin.css',
 })
-export class Admin {
+export class DiseñoLiamAdmin {
   dishes$!: Observable<IDish[]>;
   
   editingDish: IDish | null = null;
   formDish: IDish = this.getEmptyDish();
 
-  constructor(private dishService: DishService) {
+  constructor(private dishService: DiseñoLiamDishService) {
     this.loadDishes();
   }
 

@@ -4,7 +4,7 @@ import { IDish } from '../interfaces/i-dish';
 @Pipe({
   name: 'dishFilter',
 })
-export class DishFilterPipe implements PipeTransform {
+export class DiseñoLiamDishFilterPipe implements PipeTransform {
   transform(dishes: IDish[], category: string, sortBy: string): IDish[] {
     let filtered = [...dishes];
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { DiseñoLiamAuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +9,13 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class Login {
+export class DiseñoLiamLogin {
   username: string = '';
   password: string = '';
   errorMessage: string = '';
 
   constructor(
-    private authService: AuthService,
+    private authService: DiseñoLiamAuthService,
     private router: Router
   ) {}
 

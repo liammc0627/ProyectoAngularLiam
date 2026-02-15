@@ -7,7 +7,7 @@ import { IDish } from '../interfaces/i-dish';
 @Injectable({
   providedIn: 'root',
 })
-export class DishService {
+export class DiseñoLiamDishService {
   private dishesEndpoint = 'http://localhost:3000/dishes';
 
   constructor(private http: HttpClient) {}

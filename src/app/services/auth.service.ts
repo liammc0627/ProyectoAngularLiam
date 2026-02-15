@@ -7,7 +7,7 @@ import { IUser } from '../interfaces/i-user';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export class DiseñoLiamAuthService {
   private usersEndpoint = 'http://localhost:3000/users';
   private currentUser: IUser | null = null;
 

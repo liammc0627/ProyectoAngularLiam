@@ -1,4 +1,31 @@
 <div>
+  <!-- Widget de Accesibilidad -->
+  <button class="accessibility-toggle" (click)="toggleWidget()">♿</button>
+  
+  @if (showWidget) {
+    <div class="accessibility-widget">
+      <h3>Accesibilidad</h3>
+      
+      <div class="widget-section">
+        <h4>Texto</h4>
+        <button (click)="toggleLargeText()" [class.active]="largeText">Aumentar texto</button>
+        <button (click)="toggleLineHeight()" [class.active]="lineHeight">Altura de líneas</button>
+      </div>
+      
+      <div class="widget-section">
+        <h4>Visual</h4>
+        <button (click)="toggleHighContrast()" [class.active]="highContrast">Alto contraste</button>
+        <button (click)="toggleGrayscale()" [class.active]="grayscale">Escala de grises</button>
+      </div>
+      
+      <div class="widget-section">
+        <h4>Orientación</h4>
+        <button (click)="toggleHighlightLinks()" [class.active]="highlightLinks">Resaltar enlaces</button>
+        <button (click)="toggleStructure()" [class.active]="showStructure">Estructura de página</button>
+      </div>
+    </div>
+  }
+
   <h2>Carta</h2>
 
   <div>
